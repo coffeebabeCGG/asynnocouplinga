@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: asyn-a
+  profiles:
+    active: ${ACTIVE:local}
+  cloud:
+    nacos:
+      config:
+        file-extension: yml
+        server-addr: ${NACOS_ADDR:localhost:8848}
+        enabled: ${NACOS_ENABLED:false}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
