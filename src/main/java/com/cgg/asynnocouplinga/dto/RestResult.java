@@ -18,14 +18,14 @@ public class RestResult<T> {
 
 
     public static <T> RestResult<T> success() {
-        RestResult<T> restResult = new RestResult<>();
+        RestResult<T> restResult = new RestResult<T>();
         restResult.setResCode("200");
         restResult.setTimeStamp(System.currentTimeMillis());
         return restResult;
     }
 
     public static <T> RestResult<T> success(T t) {
-        RestResult<T> restResult = new RestResult<>();
+        RestResult<T> restResult = new RestResult<T>();
         restResult.setResCode("200");
         restResult.setTimeStamp(System.currentTimeMillis());
         restResult.setResult(t);
@@ -33,7 +33,7 @@ public class RestResult<T> {
     }
 
     public static <T> RestResult<T> error(String msg){
-        RestResult<T> restResult = new RestResult<>();
+        RestResult<T> restResult = new RestResult<T>();
         restResult.setResCode("500");
         restResult.setTimeStamp(System.currentTimeMillis());
         restResult.setError(msg);
@@ -41,7 +41,7 @@ public class RestResult<T> {
     }
 
     public static <T> RestResult<T> error(String code, T t, String msg){
-        RestResult<T> restResult = new RestResult<>();
+        RestResult<T> restResult = new RestResult<T>();
         restResult.setResCode(code);
         restResult.setTimeStamp(System.currentTimeMillis());
         restResult.setResult(t);
